@@ -17,17 +17,23 @@ Color& operator++(Color& t)
    }
 }
 
+void stop(int n)
+{
+    int a = 0;
+    for(int i = 0; i<n; i++) {a++;}
+}
+
 int main()
 {
-   int a = 1;
+
    Color current = Color::red;
-   while (a)
+   for (int i = 0; i<100; i++)
    {
-       if (current == Color::red) {cout<<"Red"<<endl; for(int i = 0; i<1000000000; i++) {a++;} a = 1;  ++current;}
-       else if (current == Color::yellow) {cout<<"Yellow"<<endl; for(int i = 0; i<200000000; i++) a++; a = 1;  ++current;}
-       else {cout<<"Green"<<endl; for(int i = 0; i<800000000; i++) a++; a = 1;  ++current;}
+       if (current == Color::red) {cout<<"Red"<<endl; stop(1000000000);  ++current;}
+       else if (current == Color::yellow) {cout<<"Yellow"<<endl; stop(200000000); ++current;}
+       else {cout<<"Green"<<endl; stop(800000000); ++current;}
 
    }
 
-
+    return 0;
 }
