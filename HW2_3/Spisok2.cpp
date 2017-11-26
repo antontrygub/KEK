@@ -14,7 +14,7 @@ private:
 
 public:
    Leaf* cur;
-   List() : cur{new Leaf*} {}//конструктор
+   List() : cur{new Leaf} {}//конструктор
 
 
 private:
